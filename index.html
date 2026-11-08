@@ -273,7 +273,7 @@ tr:{n_sys:"Sistem",n_diag:"Teşhis",n_pk:"Paketler",n_cta:"WhatsApp",
  bonus:"Bonus: ",vol:["100'den az","100 – 500","500+"],ad:["Evet","Hayır","Planlıyorum"],adR:["Reklamlar direkt asistana akar.","Reklamsız da başlarız.","Önce asistan, sonra reklam: doğru sıra."],
  leadPh:"Ad – İşletme – Şehir",send:"Gönder",sum:"Hazır! Paketiniz:",sumBtn:"WhatsApp'tan gönder",sumAgain:"Baştan başla",
  msg:{title:"🟢 JEMZO AI – Teşhis",name:"Ad / İşletme",sector:"Sektör",problem:"Sorun",volume:"Hacim",ads:"Meta Ads",pkg:"Paket"},
- pk:[{n:"Starter",i:["Chat Agent","Randevu akışı","Kurulum"]},{n:"Growth",tag:"En iyi",i:["Starter +","İçerik planı","Lead takibi"]},{n:"Full System",i:["Chat + Voice Agent","Meta Ads","Rapor"]}],pk_title:"Paketler",pk_cta:"Teklif al",
+ pk:[{n:"Starter",i:["Chat Agent","Randevu akışı","Kurulum"]},{n:"Growth",tag:"En iyi",i:["Starter +","İçerik planı","Lead takibi"]},{n:"Full System",i:["Chat + Voice Agent","Meta Ads","Rapor"]}],pk_title:"Paketler",pk_cta:"WhatsApp'tan yaz",
  z_title:"Başlayalım.",z_cta1:"WhatsApp",z_cta2:"Teşhis"},
 en:{n_sys:"System",n_diag:"Diagnosis",n_pk:"Packages",n_cta:"WhatsApp",
  h_title:"Messages are on us, <em>appointments are yours.</em>",h_sub:"Every language, every hour, every message and call answered. 24/7.",h_cta1:"Free Diagnosis",h_cta2:"WhatsApp",
@@ -293,7 +293,7 @@ en:{n_sys:"System",n_diag:"Diagnosis",n_pk:"Packages",n_cta:"WhatsApp",
  bonus:"Bonus: ",vol:["Under 100","100 – 500","500+"],ad:["Yes","No","Planning to"],adR:["Ads flow straight into the assistant.","We can start without ads.","Assistant first, ads next: the right order."],
  leadPh:"Name – Business – City",send:"Send",sum:"Ready! Your package:",sumBtn:"Send on WhatsApp",sumAgain:"Start over",
  msg:{title:"🟢 JEMZO AI – Diagnosis",name:"Name / Business",sector:"Industry",problem:"Problem",volume:"Volume",ads:"Meta Ads",pkg:"Package"},
- pk:[{n:"Starter",i:["Chat Agent","Booking flow","Setup"]},{n:"Growth",tag:"Best",i:["Starter +","Content plan","Lead follow-up"]},{n:"Full System",i:["Chat + Voice Agent","Meta Ads","Reports"]}],pk_title:"Packages",pk_cta:"Get a quote",
+ pk:[{n:"Starter",i:["Chat Agent","Booking flow","Setup"]},{n:"Growth",tag:"Best",i:["Starter +","Content plan","Lead follow-up"]},{n:"Full System",i:["Chat + Voice Agent","Meta Ads","Reports"]}],pk_title:"Packages",pk_cta:"Message on WhatsApp",
  z_title:"Let's start.",z_cta1:"WhatsApp",z_cta2:"Diagnosis"},
 ar:{n_sys:"النظام",n_diag:"التشخيص",n_pk:"الباقات",n_cta:"واتساب",
  h_title:"الرسائل علينا، <em>والمواعيد لك.</em>",h_sub:"بكل لغة، بكل ساعة، ردّ على كل رسالة ومكالمة. 24/7.",h_cta1:"تشخيص مجاني",h_cta2:"واتساب",
@@ -313,7 +313,7 @@ ar:{n_sys:"النظام",n_diag:"التشخيص",n_pk:"الباقات",n_cta:"و
  bonus:"هدية: ",vol:["أقل من 100","100 – 500","أكثر من 500"],ad:["نعم","لا","أخطط"],adR:["الإعلانات تصب مباشرة في المساعد.","نقدر نبدأ بدون إعلانات.","المساعد أولاً ثم الإعلانات: الترتيب الصحيح."],
  leadPh:"الاسم – المنشأة – المدينة",send:"إرسال",sum:"جاهز! باقتك:",sumBtn:"أرسل على واتساب",sumAgain:"ابدأ من جديد",
  msg:{title:"🟢 JEMZO AI – تشخيص",name:"الاسم / المنشأة",sector:"القطاع",problem:"المشكلة",volume:"الحجم",ads:"إعلانات ميتا",pkg:"الباقة"},
- pk:[{n:"البداية",i:["Chat Agent","مسار الحجز","التركيب"]},{n:"النمو",tag:"الأفضل",i:["كل البداية +","خطة محتوى","متابعة الليدز"]},{n:"النظام الكامل",i:["Chat + Voice Agent","إعلانات ميتا","تقارير"]}],pk_title:"الباقات",pk_cta:"احصل على عرض",
+ pk:[{n:"البداية",i:["Chat Agent","مسار الحجز","التركيب"]},{n:"النمو",tag:"الأفضل",i:["كل البداية +","خطة محتوى","متابعة الليدز"]},{n:"النظام الكامل",i:["Chat + Voice Agent","إعلانات ميتا","تقارير"]}],pk_title:"الباقات",pk_cta:"راسلنا واتساب",
  z_title:"لنبدأ.",z_cta1:"واتساب",z_cta2:"تشخيص"}};
 
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -339,7 +339,7 @@ function render(){
   var cls=["w1","g1","g2","d1"];
   $("#bento").innerHTML=D.bento.map(function(b,i){return '<article class="bc '+cls[i]+'"><span class="n">'+b[0]+'</span><div><h3>'+b[1]+'</h3><p>'+b[2]+'</p></div></article>'}).join("");
   $("#chips").innerHTML=D.chips.map(function(c,i){return '<div class="chip glass"><span>'+["🦷","✨","🏢","✈️"][i]+'</span>'+c+'</div>'}).join("");
-  $("#pkg").innerHTML=D.pk.map(function(p,i){return '<div class="pk'+(p.tag?" hot":"")+'">'+(p.tag?'<div class="tag">★ '+p.tag+'</div>':"")+'<h3>'+p.n+'</h3><ul>'+p.i.map(function(x){return "<li>"+x+"</li>"}).join("")+'</ul><a class="btn '+(p.tag?"btn-g":"btn-d")+'" href="#diag" data-go="#diag">'+D.pk_cta+'</a></div>'}).join("");
+  $("#pkg").innerHTML=D.pk.map(function(p,i){return '<div class="pk'+(p.tag?" hot":"")+'">'+(p.tag?'<div class="tag">★ '+p.tag+'</div>':"")+'<h3>'+p.n+'</h3><ul>'+p.i.map(function(x){return "<li>"+x+"</li>"}).join("")+'</ul><a class="btn '+(p.tag?"btn-g":"btn-d")+'" target="_blank" rel="noopener" href="'+waURL(lang==="tr"?"Merhaba JEMZO AI, "+p.n+" paketiyle ilgileniyorum. Detaylı bilgi alabilir miyim?":lang==="en"?"Hello JEMZO AI, I'm interested in the "+p.n+" package. Could I get more details?":"مرحباً JEMZO AI، أنا مهتم بباقة "+p.n+". هل يمكنني معرفة التفاصيل؟")+'">'+D.pk_cta+'</a></div>'}).join("");
   var tms=$("#tm");
   if(TESTIMONIALS.length){tms.hidden=false;$("#tmg").innerHTML=TESTIMONIALS.map(function(x){
     var q=typeof x.q==="object"?(x.q[lang]||x.q.tr||x.q.en||""):(x.q||"");
