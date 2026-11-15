@@ -134,18 +134,25 @@ html[lang=ar] .c-prog{margin-inline-start:0;margin-inline-end:auto}
 .field{display:flex;gap:.7rem}
 .field input{flex:1;min-height:3.8rem;padding:.7rem 1.2rem;border-radius:1.1rem;border:2px solid transparent;background:#fff;color:var(--ink);font:inherit;font-weight:600;min-width:0}.field input:focus{outline:0;border-color:var(--acc)}
 .field .btn{min-height:3.8rem;padding:.6rem 1.5rem}
-.fstep{padding:1.8rem 1.6rem 1.9rem;min-height:25rem;display:flex;flex-direction:column;gap:1.4rem}
+.fstep{padding:1.8rem 1.6rem 1.9rem;display:flex;flex-direction:column;gap:1.7rem}
 .fq{font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700;letter-spacing:-.02em;line-height:1.2}
 html[lang=ar] .fq{letter-spacing:0;line-height:1.45}
 .fq strong{color:var(--acc)}
 .fstep .opt{min-height:4.9rem;font-size:1.25rem}
 .fstep .opt.sel{background:var(--acc);box-shadow:0 0 0 3px rgba(61,220,132,.45);transform:scale(.98)}
+.fb{display:grid;gap:.85rem}
+.fl{display:flex;align-items:center;gap:.75rem;font-size:1.3rem;font-weight:700;line-height:1.3}
+.fn{width:2rem;height:2rem;border-radius:50%;background:var(--acc);color:#02100a;display:grid;place-items:center;font-size:1rem;font-weight:800;flex:none}
+.pkt{font-weight:700;font-size:1.2rem}.pkt strong{color:var(--acc)}
+.fstep .opt{min-height:4rem;font-size:1.15rem}
+.opts[data-key=v]{grid-template-columns:repeat(3,1fr)}
+.fok{display:none;color:var(--acc);font-weight:700;font-size:1.1rem}
 .res{display:grid;gap:.7rem;padding:1.1rem 1.3rem;border-radius:1.3rem;background:rgba(255,255,255,.08);border:1px solid rgba(61,220,132,.4);font-size:1.15rem;line-height:1.5}
 .res .bn{color:var(--acc);font-weight:600}
 .field input.err{border-color:#ff6b6b}
 .field a.btn{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 .fstep .back{align-self:flex-start;background:none;border:0;cursor:pointer;color:var(--mut);font-weight:600;text-decoration:underline;text-underline-offset:4px;font-size:1rem;padding:.3rem 0}
-@media(max-width:560px){.fstep .opts{grid-template-columns:1fr}.fstep{padding:1.4rem 1.1rem 1.5rem}.field{flex-direction:column}}
+@media(max-width:560px){.fstep .opts,.opts[data-key=v]{grid-template-columns:1fr}.fstep .field input,.fstep .field .btn{width:100%;box-sizing:border-box}.fstep{padding:1.4rem 1.1rem 1.5rem}.field{flex-direction:column}}
 .done{display:grid;gap:.7rem;justify-items:center}.back{color:var(--mut);font-weight:600;text-decoration:underline;text-underline-offset:4px;font-size:.95rem}
 .done .btn{width:100%}
 @media(max-width:520px){.opts{grid-template-columns:1fr}.field{flex-direction:column}}
@@ -274,7 +281,7 @@ tr:{n_sys:"Sistem",n_diag:"Teşhis",n_pk:"Paketler",n_cta:"WhatsApp",
  b_title:"Tek sistem. 4 parça.",tm_title:"Müşteriler ne diyor",
  bento:[["01","Chat & Voice Agent","Mesaj ve arama, 7/24"],["02","Meta Ads","Reklamdan direkt sohbete"],["03","Randevu & Lead","Otomatik kayıt, hatırlatma"],["04","İçerik","Aylık plan"]],
  chips:["Diş","Estetik","Emlak","Turizm"],
- d_title:"60 saniyelik teşhis",d_sub:"4 tıkla. Sonuç WhatsApp'a.",
+ d_title:"60 saniyelik teşhis",d_sub:"3 tık. Sonuç WhatsApp'a.",
  q:{sector:"Sektörünüz?",problem:"En büyük sorun?",volume:"Aylık mesaj / arama?",ads:"Meta reklamı veriyor musunuz?",lead:"Ad – İşletme – Şehir"},
  sectors:["Diş kliniği","Estetik & güzellik","Emlak","Turizm & seyahat"],other:"Başka",otherPh:"Kısaca yazın…",otherR:"Not aldık. Size özel plan hazırlarız.",otherB:"Ücretsiz ilk analiz.",
  pr:[
@@ -294,7 +301,7 @@ en:{n_sys:"System",n_diag:"Diagnosis",n_pk:"Packages",n_cta:"WhatsApp",
  b_title:"One system. 4 parts.",tm_title:"What clients say",
  bento:[["01","Chat & Voice Agent","Messages and calls, 24/7"],["02","Meta Ads","Straight from ad to chat"],["03","Booking & Leads","Auto entry, reminders"],["04","Content","Monthly plan"]],
  chips:["Dental","Aesthetic","Real estate","Tourism"],
- d_title:"60-second diagnosis",d_sub:"4 taps. Result to WhatsApp.",
+ d_title:"60-second diagnosis",d_sub:"3 taps. Result to WhatsApp.",
  q:{sector:"Your industry?",problem:"Biggest problem?",volume:"Messages / calls per month?",ads:"Do you run Meta ads?",lead:"Name – Business – City"},
  sectors:["Dental clinic","Aesthetic & beauty","Real estate","Tourism & travel"],other:"Other",otherPh:"Write briefly…",otherR:"Noted. We'll prepare a custom plan.",otherB:"A free first analysis.",
  pr:[
@@ -314,7 +321,7 @@ ar:{n_sys:"النظام",n_diag:"التشخيص",n_pk:"الباقات",n_cta:"و
  b_title:"نظام واحد. 4 أجزاء.",tm_title:"آراء عملائنا",
  bento:[["01","Chat & Voice Agent","رسائل ومكالمات، 24/7"],["02","إعلانات ميتا","من الإعلان إلى المحادثة"],["03","حجز وليدز","تسجيل وتذكير تلقائي"],["04","محتوى","خطة شهرية"]],
  chips:["أسنان","تجميل","عقارات","سياحة"],
- d_title:"تشخيص في 60 ثانية",d_sub:"٤ نقرات. والنتيجة على واتساب.",
+ d_title:"تشخيص في 60 ثانية",d_sub:"٣ نقرات. والنتيجة على واتساب.",
  q:{sector:"قطاعك؟",problem:"أكبر مشكلة؟",volume:"رسائل / اتصالات شهرياً؟",ads:"هل تنشر إعلانات ميتا؟",lead:"الاسم – المنشأة – المدينة"},
  sectors:["عيادة أسنان","تجميل وعناية","عقارات","سياحة وسفر"],other:"أخرى",otherPh:"اكتب باختصار…",otherR:"تم. نجهّز لك خطة مخصصة.",otherB:"تحليل أولي مجاني.",
  pr:[
@@ -432,42 +439,39 @@ function initScroll(){
   }
   ScrollTrigger.refresh();
 }
-/* ===== diagnosis (tap steps + short form) ===== */
-var S={},step=1,fs;
+/* ===== diagnosis: one stacked form, answers appear under each other ===== */
+var S={},fs,prevKeys=[];
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function progress(n){$("#pbar").style.width=(n/5*100)+"%";$("#cprog").textContent=n+" / 5"}
-function show(html,dir){fs.innerHTML=html;if(!reduce)gsap.fromTo(fs.children,{x:(lang==="ar"?-1:1)*(dir||1)*36,autoAlpha:0},{x:0,autoAlpha:1,duration:.4,ease:"power3.out",stagger:.05});
-  var bk=$("#bk");if(bk)bk.onclick=function(){step--;renderStep(-1)};bindUI()}
-function optsHTML(list,emo){return '<div class="opts">'+list.map(function(o,i){return '<button class="opt" data-k="'+i+'">'+(emo?'<span class="e">'+emo[i]+'</span>':"")+'<span>'+o+'</span></button>'}).join("")+'</div>'}
-function backHTML(){return step>1?'<button class="back" id="bk">'+t().bk+'</button>':""}
-function pickPkg(){var D=t();return S.ai===0||S.vi===2?D.pk[2].n:(S.vi===1||S.ai===2?D.pk[1].n:D.pk[0].n)}
-function buildMsg(){var D=t(),M=D.msg;return [M.title,"",M.name+": "+S.name,M.sector+": "+S.sector,M.problem+": "+S.problem,M.volume+": "+S.volume,M.ads+": "+S.ads,M.pkg+": "+S.pkg].join("\n")}
-function startDiag(){S={};step=1;fs=$("#fstep");renderStep(1)}
-function renderStep(dir){
-  var D=t();progress(step);
-  if(step<=4){
-    var q,list,emo=null;
-    if(step===1){q=D.q.sector;list=D.sectors;emo=["🦷","✨","🏢","✈️"]}
-    else if(step===2){q=D.q.problem;list=D.pr[S.si].map(function(p){return p.t})}
-    else if(step===3){q=D.q.volume;list=D.vol}
-    else{q=D.q.ads;list=D.ad}
-    show('<div class="fq">'+q+'</div>'+optsHTML(list,emo)+backHTML(),dir);
-    $$(".opt",fs).forEach(function(b){b.onclick=function(){
-      var k=+b.getAttribute("data-k");b.classList.add("sel");
-      if(step===1){S.si=k;S.sector=list[k]}else if(step===2){S.pi=k;S.problem=list[k]}else if(step===3){S.vi=k;S.volume=list[k]}else{S.ai=k;S.ads=list[k]}
-      setTimeout(function(){step++;renderStep(1)},reduce?0:220)}});
-    return}
-  S.pkg=pickPkg();var p=D.pr[S.si][S.pi];
-  show('<div class="fq">'+D.sum+' <strong>'+esc(S.pkg)+'</strong></div><div class="res"><p>'+p.r+'</p><p>'+D.adR[S.ai]+'</p><p class="bn">'+D.bonus+p.b+'</p></div>'+
-    '<div class="field"><input type="text" id="nm" autocomplete="name" placeholder="'+esc(D.leadPh)+'" aria-label="'+esc(D.leadPh)+'"><a class="btn btn-g" id="go" target="_blank" rel="noopener" href="#">'+D.send+'</a></div>'+backHTML(),dir);
-  var nm=$("#nm"),go=$("#go");
-  function upd(){S.name=nm.value.trim();go.href=waURL(buildMsg());nm.classList.remove("err")}
-  nm.oninput=upd;upd();
-  go.onclick=function(e){upd();if(!S.name){e.preventDefault();nm.classList.add("err");nm.focus();return}
-    try{localStorage.setItem("jemzo_diag",JSON.stringify(S))}catch(x){}try{if(window.fbq)fbq("track","Lead")}catch(x){}
-    setTimeout(function(){show('<div class="fq">✓ '+D.ok+'</div><button class="back" id="again">'+D.sumAgain+'</button>',1);$("#again").onclick=startDiag},350)};
-  nm.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();go.click()}};
+function progress(){var n=(S.si!=null)+(S.pi!=null)+(S.vi!=null)+(S.name?1:0);$("#pbar").style.width=(n/4*100)+"%";$("#cprog").textContent=n+" / 4"}
+function blk(num,label,list,emo,sel,key){return '<div class="fb" data-b="'+key+'"><div class="fl"><span class="fn">'+num+'</span>'+label+'</div><div class="opts" data-key="'+key+'">'+list.map(function(o,i){return '<button class="opt'+(i===sel?" sel":"")+'" data-k="'+i+'">'+(emo?'<span class="e">'+emo[i]+'</span>':"")+'<span>'+o+'</span></button>'}).join("")+'</div></div>'}
+function pickPkg(){var D=t();return S.vi===2?D.pk[2].n:(S.vi===1?D.pk[1].n:D.pk[0].n)}
+function buildMsg(){var D=t(),M=D.msg;return [M.title,"",M.name+": "+S.name,M.sector+": "+S.sector,M.problem+": "+S.problem,M.volume+": "+S.volume,M.pkg+": "+S.pkg].join("\n")}
+function startDiag(){S={};prevKeys=[];fs=$("#fstep");draw()}
+function draw(){
+  var D=t(),h="",keys=["s"];
+  h+=blk(1,D.q.sector,D.sectors,["🦷","✨","🏢","✈️"],S.si,"s");
+  if(S.si!=null){keys.push("p");h+=blk(2,D.q.problem,D.pr[S.si].map(function(p){return p.t}),null,S.pi,"p")}
+  if(S.pi!=null){keys.push("r","v");h+='<div class="res" data-b="r"><p>'+D.pr[S.si][S.pi].r+'</p></div>'+blk(3,D.q.volume,D.vol,null,S.vi,"v")}
+  if(S.vi!=null){keys.push("f");S.pkg=pickPkg();
+    h+='<div class="fb" data-b="f"><div class="fl"><span class="fn">4</span>'+D.q.lead+'</div><div class="pkt">'+D.sum+' <strong>'+esc(S.pkg)+'</strong></div>'+
+    '<div class="field"><input type="text" id="nm" autocomplete="name" value="'+esc(S.name||"")+'" placeholder="'+esc(D.leadPh)+'" aria-label="'+esc(D.leadPh)+'"><a class="btn btn-g" id="go" target="_blank" rel="noopener" href="#">'+D.send+'</a></div><div class="fok" id="fok">'+D.ok+'</div></div>'}
+  fs.innerHTML=h;progress();
+  var fresh=keys.filter(function(k){return prevKeys.indexOf(k)<0});prevKeys=keys;
+  if(fresh.length&&prevKeysInit){fresh.forEach(function(k,i){var el=$('[data-b="'+k+'"]',fs);if(el&&!reduce)gsap.fromTo(el,{y:26,autoAlpha:0},{y:0,autoAlpha:1,duration:.45,delay:i*.08,ease:"power3.out"})});
+    var last=$('[data-b="'+fresh[fresh.length-1]+'"]',fs);if(last)setTimeout(function(){var r=last.getBoundingClientRect();if(r.bottom>innerHeight-20||r.top<80){if(window.lenis)lenis.scrollTo(last,{offset:-160});else last.scrollIntoView({behavior:"smooth",block:"center"})}},120)}
+  prevKeysInit=true;
+  $$(".opts .opt",fs).forEach(function(b){b.onclick=function(){var k=+b.getAttribute("data-k"),key=b.parentNode.getAttribute("data-key"),L=b.querySelector("span:last-child").textContent;
+    if(key==="s"){if(S.si!==k)S.pi=null;S.si=k;S.sector=L}else if(key==="p"){S.pi=k;S.problem=L}else{S.vi=k;S.volume=L}draw()}});
+  var nm=$("#nm"),go=$("#go");if(nm){
+    var upd=function(){S.name=nm.value.trim();go.href=waURL(buildMsg());nm.classList.remove("err");progress()};
+    nm.oninput=upd;upd();
+    go.onclick=function(e){upd();if(!S.name){e.preventDefault();nm.classList.add("err");nm.focus();return}
+      try{localStorage.setItem("jemzo_diag",JSON.stringify(S))}catch(x){}try{if(window.fbq)fbq("track","Lead")}catch(x){}
+      $("#fok").style.display="block"};
+    nm.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();go.click()}}}
+  bindUI();
 }
+var prevKeysInit=false;
 function boot(){
   $("#yr").textContent=new Date().getFullYear();render();
   $$(".lang button").forEach(function(b){b.onclick=function(){lang=b.getAttribute("data-l");try{localStorage.setItem("jemzo_lang",lang)}catch(e){}render()}});
